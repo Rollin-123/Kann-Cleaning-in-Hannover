@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kann-Cleaning | Premium Gebäudereinigung in Hannover</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Professionelle Reinigungsdienstleistungen in Hannover: Treppenhausreinigung, Büroreinigung, Schulreinigung, Einkaufszentrum Reinigung. Zertifiziert & zuverlässig.">
+    <meta name="keywords" content="Reinigung Hannover, Gebäudereinigung Hannover, Treppenhausreinigung, Büroreinigung, Schulreinigung, Einkaufszentrum Reinigung, Reinigungsfirma Hannover">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Kann-Cleaning">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Kann-Cleaning | Premium Reinigungsdienstleistungen Hannover">
+    <meta property="og:description" content="Ihr professioneller Partner für Gebäudereinigung in Hannover und Umgebung">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:url" content="https://kann-cleaning.de">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://api.iconify.design/mdi/spray-bottle-clean.svg">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- GSAP + ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <style>
+        :root {
+            --color-primary: #1A365D;
+            --color-secondary: #2D9D78;
+            --color-accent: #F6AD55;
+            --color-light: #F7FAFC;
+            --color-dark: #2D3748;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--color-dark);
+            background-color: var(--color-light);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .hero-clip {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+
+        .section-padding {
+            padding: 6rem 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .section-padding {
+                padding: 8rem 2rem;
+            }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--color-primary);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--color-secondary);
+        }
+
+        /* Image Hover Effects */
+        .hover-scale {
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+
+        /* Gradient Text */
+        .text-gradient {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Floating Animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* Button Effects */
+        .btn-primary {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            color: white;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(26, 54, 93, 0.2);
+        }
+
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn-primary:hover::after {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* Card Hover Effects */
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.8s;
+        }
+
+        .service-card:hover::before {
+            left: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Testimonial Cards */
+        .testimonial-card {
+            transition: all 0.3s ease;
+            border: 1px solid #E2E8F0;
+        }
+
+        .testimonial-card:hover {
+            border-color: var(--color-secondary);
+            transform: translateY(-5px);
+        }
+
+        /* Responsive Typography */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.25rem; }
+            h2 { font-size: 1.875rem; }
+            h3 { font-size: 1.5rem; }
+        }
+
+        /* Loading Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        /* Section Background Patterns */
+        .grid-pattern {
+            background-image: 
+                linear-gradient(rgba(26, 54, 93, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(26, 54, 93, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+    </style>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1A365D',
+                        secondary: '#2D9D78',
+                        accent: '#F6AD55',
+                        light: '#F7FAFC',
+                        dark: '#2D3748'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-light text-dark">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 py-4 px-6 lg:px-8 bg-white/95 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center shadow-md">
+                    <i class="fas fa-spray-can-sparkles text-white text-lg"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl lg:text-2xl font-serif font-bold text-primary">Kann<span class="text-secondary">.</span>Cleaning</h1>
+                    <p class="text-xs text-gray-600 tracking-wider hidden sm:block">Premium Gebäudereinigung</p>
+                </div>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden lg:flex items-center space-x-8">
+                <a href="#home" class="text-gray-700 hover:text-primary font-medium transition-colors relative group">
+                    <span>Start</span>
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <a href="#services" class="text-gray-700 hover:text-primary font-medium transition-colors relative group">
+                    <span>Leistungen</span>
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <a href="#about" class="text-gray-700 hover:text-primary font-medium transition-colors relative group">
+                    <span>Über uns</span>
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <a href="#portfolio" class="text-gray-700 hover:text-primary font-medium transition-colors relative group">
+                    <span>Referenzen</span>
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <a href="#contact" class="btn-primary px-6 py-3 rounded-lg font-medium">
+                    <i class="fas fa-phone-alt mr-2"></i> Kontakt
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobileMenuBtn" class="lg:hidden text-2xl text-primary">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="lg:hidden fixed top-0 left-0 w-full h-screen bg-white/95 backdrop-blur-md hidden transition-all duration-300">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-8">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                            <i class="fas fa-spray-can-sparkles text-white"></i>
+                        </div>
+                        <h1 class="text-xl font-bold text-primary">Kann.Cleaning</h1>
+                    </div>
+                    <button id="closeMenuBtn" class="text-2xl text-primary">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <div class="space-y-4">
+                    <a href="#home" class="block text-lg font-medium text-gray-800 hover:text-primary transition-colors py-3 px-4 hover:bg-gray-50 rounded-lg">Start</a>
+                    <a href="#services" class="block text-lg font-medium text-gray-800 hover:text-primary transition-colors py-3 px-4 hover:bg-gray-50 rounded-lg">Leistungen</a>
+                    <a href="#about" class="block text-lg font-medium text-gray-800 hover:text-primary transition-colors py-3 px-4 hover:bg-gray-50 rounded-lg">Über uns</a>
+                    <a href="#portfolio" class="block text-lg font-medium text-gray-800 hover:text-primary transition-colors py-3 px-4 hover:bg-gray-50 rounded-lg">Referenzen</a>
+                    <a href="#contact" class="block mt-4 btn-primary px-6 py-3 rounded-lg text-center">
+                        <i class="fas fa-phone-alt mr-2"></i> Kontakt aufnehmen
+                    </a>
+                </div>
+                
+                <div class="mt-12 pt-8 border-t border-gray-100">
+                    <div class="space-y-4">
+                        <a href="tel:+4915216806250" class="flex items-center text-gray-700">
+                            <i class="fas fa-phone text-secondary mr-3"></i>
+                            <span>0152 1680 62 50</span>
+                        </a>
+                        <a href="mailto:info@kann-cleaning.de" class="flex items-center text-gray-700">
+                            <i class="fas fa-envelope text-secondary mr-3"></i>
+                            <span>info@kann-cleaning.de</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden hero-clip">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-secondary">
+            <!-- Hero Image -->
+            <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
+                 alt="Professionelle Gebäudereinigung Hannover" 
+                 class="absolute inset-0 w-full h-full object-cover opacity-40">
+        </div>
+
+        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+
+        <div class="relative z-20 max-w-6xl mx-auto px-6 text-center text-white">
+            <div class="mb-6">
+                <span class="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm tracking-widest">HANNOVER & UMGEBUNG</span>
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif mb-6 leading-tight">
+                Wo <span class="text-accent">Präzision</span><br>
+                auf Sauberkeit trifft
+            </h1>
+            
+            <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto opacity-90">
+                Ihr Premium-Partner für professionelle Gebäudereinigung in Hannover. Wir schaffen nicht nur Sauberkeit, sondern Vertrauen.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-20">
+                <a href="#contact" class="btn-primary px-8 py-4 rounded-lg text-lg font-semibold inline-flex items-center justify-center gap-3">
+                    <i class="fas fa-calendar-check"></i>
+                    Kostenlose Beratung
+                </a>
+                <a href="tel:+4915216806250" class="bg-white/20 backdrop-blur-sm border-2 border-white/30 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-primary transition-all duration-300 inline-flex items-center justify-center gap-3">
+                    <i class="fas fa-phone"></i>
+                    0152 1680 62 50
+                </a>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="fade-in-up">
+                    <div class="text-3xl md:text-4xl font-bold mb-2">
+                        <span class="counter" data-target="99">0</span>%
+                    </div>
+                    <div class="text-sm tracking-widest opacity-80">Zufriedenheit</div>
+                </div>
+                <div class="fade-in-up" style="animation-delay: 0.2s">
+                    <div class="text-3xl md:text-4xl font-bold mb-2">
+                        <span class="counter" data-target="1500">0</span>+
+                    </div>
+                    <div class="text-sm tracking-widest opacity-80">Projekte</div>
+                </div>
+                <div class="fade-in-up" style="animation-delay: 0.4s">
+                    <div class="text-3xl md:text-4xl font-bold mb-2">
+                        <span class="counter" data-target="24">0</span>h
+                    </div>
+                    <div class="text-sm tracking-widest opacity-80">Reaktionszeit</div>
+                </div>
+                <div class="fade-in-up" style="animation-delay: 0.6s">
+                    <div class="text-3xl md:text-4xl font-bold mb-2">
+                        <span class="counter" data-target="12">0</span>+
+                    </div>
+                    <div class="text-sm tracking-widest opacity-80">Jahre Erfahrung</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/60 floating">
+            <i class="fas fa-chevron-down text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section-padding bg-light">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-4">UNSERE LEISTUNGEN</span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif mb-6 text-primary">Auf jede Fläche spezialisiert</h2>
+                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+                    Professionelle Reinigungslösungen für jede Umgebung in Hannover und Umgebung
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1: Treppenhausreinigung -->
+                <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1598032895397-b9472444bf93?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Treppenhausreinigung Hannover" 
+                             class="w-full h-full object-cover hover-scale">
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+                        <div class="absolute top-4 left-4 bg-accent text-white px-3 py-1 rounded-lg text-sm font-bold">
+                            Immobilien
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-stairs text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-serif mb-3">Treppenhausreinigung</h3>
+                        <p class="text-gray-600 mb-4">
+                            Professionelle Reinigung von Treppenhäusern in Mehrfamilienhäusern. Stufen, Handläufe und Spiegel werden gründlich gereinigt.
+                        </p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center gap-2 text-gray-700">
+                                <i class="fas fa-check-circle text-secondary text-sm"></i>
+                                Gründliche Stufenreinigung
+                            </li>
+                            <li class="flex items-center gap-2 text-gray-700">
+                                <i class="fas fa-check-circle text-secondary text-sm"></i>
+                                Handlauf-Desinfektion
+                            </li>
+                            <li class="flex items-center gap-2 text-gray-700">
+                                <i class="fas fa-check-circle text-secondary text-sm"></i>
+                                Fenster und Spiegel
+                            </li>
+                        </ul>
+                        <a href="#contact" class="text-primary font-semibold hover:text-secondary transition-colors inline-flex items-center gap-2">
+                            Jetzt anfragen
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 2: Büroreinigung -->
+                <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Büroreinigung Hannover" 
+                             class="w-full h-full object-cover hover-scale">
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+                        <div class="absolute top-4 left-4 bg-accent text-white px-3 py-1 rounded-lg text-sm font-bold">
+                            Gewerbe
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-building text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-serif mb-3">Büroreinigung</h3>
+                        <p class="text-gray-600 mb-4">
+                            Tägliche oder wöchentliche Reinigung Ihrer Büroräume für ein produktives Arbeitsumfeld.
+                        </p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center gap-2 text-gray-700">
+                                <i class="fas fa-check-circle text-secondary text-sm"></i>
+                                Schreibtisch-Desinfektion
+                            </li>
+                            <li class="flex items-center gap-2 text-gray-700">
+                                <i class="fas fa-check-circle text-secondary text-sm"></i>
+                                Teppichreinigung
+                            </li>
+                            <li class="flex items-center gap-2 text-gray-700">
+                                <i class="fas fa-check-circle text-secondary text-sm"></i>
+                                Küchen- & Sanitärbereich
+                            </li>
+                        </ul>
+                        <a href="#contact" class="text-primary font-semibold hover:text-secondary transition-colors inline-flex items-center gap-2">
+                            Jetzt anfragen
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 3: Schulreinigung -->
+                <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Schulreinigung Hannover" 
+                             class="w-full h-full object-cover hover-scale">
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+                        <div class="absolute top-4 left-4 bg-accent text-white px-3 py-1 rounded-lg text-sm font-bold">
+                            Bildung
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-school text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-serif mb-3">Schulen & Kitas</h3>
+                        <p class="text-gray-600 mb-4">
+                            Hygienische Reinigung von Bildungseinrichtungen mit ökologischen Reinigungsmitteln.
+                        </p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center gap-2 text-gray-700">
+                                <i class="fas fa-check-circle text-secondary text-sm"></i>
+                                Hygienische Sanitärreinigung
+                            </li>
+                            <li class="flex items-center gap-2 text-gray-700">
+                                <i class="fas fa-check-circle text-secondary text-sm"></i>
+                                Spielzeug-Desinfektion
+                            </li>
+                            <li class="flex items-center gap-2 text-gray-700">
+                                <i class="fas fa-check-circle text-secondary text-sm"></i>
+                                Turnhallenreinigung
+                            </li>
+                        </ul>
+                        <a href="#contact" class="text-primary font-semibold hover:text-secondary transition-colors inline-flex items-center gap-2">
+                            Jetzt anfragen
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding bg-white grid-pattern">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <div class="relative">
+                    <!-- Team Image -->
+                    <div class="rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1551836026-d5c2c14c1c1c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Kann-Cleaning Team Hannover" 
+                             class="w-full h-[500px] object-cover hover-scale">
+                    </div>
+                    
+                    <!-- Floating Badge -->
+                    <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-lg max-w-xs">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
+                                <i class="fas fa-award text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-primary">Zertifizierte Qualität</h4>
+                                <p class="text-sm text-gray-600">ISO 9001 zertifiziert</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600">
+                            Alle Mitarbeiter sind speziell geschult und arbeiten nach höchsten Qualitätsstandards.
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <span class="inline-block px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-semibold mb-4">ÜBER UNS</span>
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif mb-6 text-primary">
+                        Wir schaffen nicht nur Sauberkeit.
+                        <span class="text-gradient"> Wir schaffen Vertrauen.</span>
+                    </h2>
+                    
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                        "Als Inhaberin von Kann-Cleaning stehe ich persönlich für jede Reinigung. Unser Ziel ist es, nicht nur saubere Räume zu hinterlassen, sondern auch Vertrauen aufzubauen und langfristige Partnerschaften zu pflegen."
+                    </p>
+                    
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-shield-alt text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">100% Zufriedenheitsgarantie</h4>
+                                <p class="text-gray-600">Wir arbeiten so lange nach, bis Sie vollkommen zufrieden sind.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-leaf text-secondary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Ökologische Reinigung</h4>
+                                <p class="text-gray-600">Verwendung von umweltfreundlichen Reinigungsmitteln.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-clock text-accent text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Flexible Termine</h4>
+                                <p class="text-gray-600">Anpassung an Ihre Arbeitszeiten, auch außerhalb der Geschäftszeiten.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contact" class="btn-primary px-6 py-3 rounded-lg font-semibold inline-flex items-center gap-2">
+                            <i class="fas fa-calendar"></i>
+                            Termin vereinbaren
+                        </a>
+                        <a href="tel:+4915216806250" class="border-2 border-primary text-primary px-6 py-3 rounded-lg font-semibold hover:bg-primary hover:text-white transition-all duration-300 inline-flex items-center gap-2">
+                            <i class="fas fa-phone"></i>
+                            0152 1680 62 50
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio / Before-After Section -->
+    <section id="portfolio" class="section-padding bg-light">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <span class="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-semibold mb-4">ERGEBNISSE</span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif mb-4 text-primary">Bewegen Sie den Regler</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Sehen Sie selbst den Unterschied unserer professionellen Reinigung
+                </p>
+            </div>
+
+            <div class="relative w-full max-w-4xl mx-auto h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl" id="comparison-container">
+                <!-- Before Image -->
+                <div id="before-container" class="absolute inset-0 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1581141849291-1125c7b692b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" 
+                         alt="Vor der Reinigung" 
+                         class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-primary/50 flex items-center justify-center">
+                        <span class="bg-white text-primary px-5 py-2 rounded-lg font-bold text-lg tracking-wider">VORHER</span>
+                    </div>
+                </div>
+
+                <!-- After Image -->
+                <div id="after-wrapper" class="absolute inset-0 overflow-hidden" style="width: 50%">
+                    <img src="https://images.unsplash.com/photo-1562663474-6cbb3eaa4d14?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" 
+                         alt="Nach der Reinigung" 
+                         class="w-full h-full object-cover" 
+                         id="after-image">
+                    <div class="absolute top-4 right-4 bg-white text-primary px-4 py-2 rounded-lg font-bold shadow-lg">
+                        NACHHER
+                    </div>
+                </div>
+
+                <!-- Slider Handle -->
+                <div id="slider-handle" class="absolute top-0 bottom-0 w-2 bg-white cursor-ew-resize z-20 flex items-center justify-center" style="left: 50%">
+                    <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center shadow-lg">
+                        <i class="fas fa-arrows-left-right text-white"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Portfolio Images -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
+                <div class="rounded-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                         alt="Reinigungsergebnis 1" 
+                         class="w-full h-40 object-cover hover-scale">
+                </div>
+                <div class="rounded-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1598032895397-b9472444bf93?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                         alt="Reinigungsergebnis 2" 
+                         class="w-full h-40 object-cover hover-scale">
+                </div>
+                <div class="rounded-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                         alt="Reinigungsergebnis 3" 
+                         class="w-full h-40 object-cover hover-scale">
+                </div>
+                <div class="rounded-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                         alt="Reinigungsergebnis 4" 
+                         class="w-full h-40 object-cover hover-scale">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-primary/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-serif mb-4 text-primary">Was unsere Kunden sagen</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Vertrauen Sie auf die Erfahrung unserer zufriedenen Kunden in Hannover
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-white p-6 rounded-xl">
+                    <div class="flex items-center gap-1 text-yellow-500 mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">
+                        "Kann-Cleaning reinigt seit Jahren unsere Büros in Hannover. Die Arbeit ist stets perfekt, pünktlich und zuverlässig. Besonders beeindruckt hat uns die Flexibilität."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-white font-bold">
+                            TW
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Thomas Weber</h4>
+                            <p class="text-sm text-gray-500">Geschäftsführer, Weber GmbH</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-white p-6 rounded-xl">
+                    <div class="flex items-center gap-1 text-yellow-500 mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">
+                        "Die Reinigung unseres Einkaufszentrums durch Kann-Cleaning hat unsere Kundenzufriedenheit deutlich erhöht. Professionalität auf höchstem Niveau."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-white font-bold">
+                            SM
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Sabine Müller</h4>
+                            <p class="text-sm text-gray-500">Center-Managerin</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-white p-6 rounded-xl">
+                    <div class="flex items-center gap-1 text-yellow-500 mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">
+                        "Als Schule in Hannover vertrauen wir auf die hygienische Reinigung von Kann-Cleaning. Besonders wichtig ist uns die kindersichere Reinigung der Klassenräume."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-white font-bold">
+                            MS
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Dr. Michael Schmidt</h4>
+                            <p class="text-sm text-gray-500">Schulleiter, Gymnasium Hannover</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div>
+                    <span class="inline-block px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-semibold mb-4">KONTAKT</span>
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif mb-6 text-primary">
+                        Starten Sie noch heute<br>
+                        Ihr Projekt mit uns
+                    </h2>
+                    
+                    <p class="text-lg text-gray-600 mb-8">
+                        Lassen Sie sich von unserem Expertenteam beraten und erhalten Sie ein individuelles Angebot für Ihre Reinigungsanforderungen.
+                    </p>
+
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold mb-1">Unsere Adresse</h4>
+                                <p class="text-gray-600">Musterstraße 123<br>30159 Hannover</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-phone text-secondary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold mb-1">Telefon</h4>
+                                <a href="tel:+4915216806250" class="text-gray-600 hover:text-primary transition-colors block">0152 1680 62 50</a>
+                                <a href="tel:+4951164712976" class="text-gray-600 hover:text-primary transition-colors block">0511 6471 29 76</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-envelope text-accent text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold mb-1">E-Mail</h4>
+                                <a href="mailto:info@kann-cleaning.de" class="text-gray-600 hover:text-primary transition-colors block">info@kann-cleaning.de</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Opening Hours -->
+                    <div class="p-6 bg-gray-50 rounded-xl">
+                        <h4 class="text-lg font-bold mb-3">Unsere Öffnungszeiten</h4>
+                        <div class="space-y-2">
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Montag - Freitag</span>
+                                <span class="font-semibold">7:00 - 19:00 Uhr</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Samstag</span>
+                                <span class="font-semibold">8:00 - 16:00 Uhr</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Sonntag & Feiertage</span>
+                                <span class="font-semibold text-secondary">Notfallservice</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-light p-6 md:p-8 rounded-xl shadow-lg">
+                    <form id="contact-form" class="space-y-5">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-gray-700 mb-2 font-medium">Vorname *</label>
+                                <input type="text" required 
+                                       class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2 font-medium">Nachname *</label>
+                                <input type="text" required 
+                                       class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-gray-700 mb-2 font-medium">E-Mail *</label>
+                            <input type="email" required 
+                                   class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all">
+                        </div>
+
+                        <div>
+                            <label class="block text-gray-700 mb-2 font-medium">Telefon</label>
+                            <input type="tel" 
+                                   class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all">
+                        </div>
+
+                        <div>
+                            <label class="block text-gray-700 mb-2 font-medium">Service *</label>
+                            <select required 
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all">
+                                <option value="">Bitte wählen</option>
+                                <option value="treppenhaus">Treppenhausreinigung</option>
+                                <option value="buero">Büroreinigung</option>
+                                <option value="schule">Schulreinigung</option>
+                                <option value="einkaufszentrum">Einkaufszentrum</option>
+                                <option value="privat">Privathausreinigung</option>
+                                <option value="anderes">Anderes</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-gray-700 mb-2 font-medium">Nachricht *</label>
+                            <textarea rows="4" required 
+                                      class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full btn-primary py-3 rounded-lg text-lg font-semibold">
+                            <i class="fas fa-paper-plane mr-2"></i> Anfrage senden
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-spray-can-sparkles text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Kann.Cleaning</h3>
+                            <p class="text-sm opacity-80">Premium Reinigung</p>
+                        </div>
+                    </div>
+                    <p class="text-white/80 mb-6 text-sm">
+                        Ihr professioneller Partner für makellose Gebäudereinigung in Hannover und Umgebung.
+                    </p>
+                    <div class="flex space-x-3">
+                        <a href="#" class="w-9 h-9 bg-white/10 rounded-full flex items-center justify-center hover:bg-white hover:text-primary transition-all">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 bg-white/10 rounded-full flex items-center justify-center hover:bg-white hover:text-primary transition-all">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 bg-white/10 rounded-full flex items-center justify-center hover:bg-white hover:text-primary transition-all">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Leistungen</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="text-white/80 hover:text-white transition-colors text-sm">Treppenhausreinigung</a></li>
+                        <li><a href="#services" class="text-white/80 hover:text-white transition-colors text-sm">Büroreinigung</a></li>
+                        <li><a href="#services" class="text-white/80 hover:text-white transition-colors text-sm">Schulreinigung</a></li>
+                        <li><a href="#services" class="text-white/80 hover:text-white transition-colors text-sm">Einkaufszentrum</a></li>
+                        <li><a href="#services" class="text-white/80 hover:text-white transition-colors text-sm">Privathausreinigung</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Unternehmen</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-white/80 hover:text-white transition-colors text-sm">Über uns</a></li>
+                        <li><a href="#portfolio" class="text-white/80 hover:text-white transition-colors text-sm">Referenzen</a></li>
+                        <li><a href="#contact" class="text-white/80 hover:text-white transition-colors text-sm">Kontakt</a></li>
+                        <li><a href="#" class="text-white/80 hover:text-white transition-colors text-sm">Karriere</a></li>
+                        <li><a href="#" class="text-white/80 hover:text-white transition-colors text-sm">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Rechtliches</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-white/80 hover:text-white transition-colors text-sm">Impressum</a></li>
+                        <li><a href="#" class="text-white/80 hover:text-white transition-colors text-sm">Datenschutz</a></li>
+                        <li><a href="#" class="text-white/80 hover:text-white transition-colors text-sm">AGB</a></li>
+                        <li><a href="#" class="text-white/80 hover:text-white transition-colors text-sm">Cookie-Richtlinie</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="mt-8 pt-8 border-t border-white/20 text-center text-white/60">
+                <p class="text-sm">&copy; 2024 Kann-Cleaning. Alle Rechte vorbehalten.</p>
+                <p class="mt-2 text-xs">Professionelle Gebäudereinigung in Hannover und der Region</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize GSAP
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Mobile Menu Functionality
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const closeMenuBtn = document.getElementById('closeMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        function openMobileMenu() {
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileMenu() {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
+
+        mobileMenuBtn.addEventListener('click', openMobileMenu);
+        closeMenuBtn.addEventListener('click', closeMobileMenu);
+
+        // Close mobile menu when clicking links
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('shadow-lg', 'bg-white');
+            } else {
+                navbar.classList.remove('shadow-lg', 'bg-white');
+            }
+        });
+
+        // Counter Animation
+        const counters = document.querySelectorAll('.counter');
+        counters.forEach(counter => {
+            const target = parseInt(counter.getAttribute('data-target'));
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        let current = 0;
+                        const increment = target / 100;
+                        
+                        const updateCounter = () => {
+                            if (current < target) {
+                                current += increment;
+                                counter.innerText = Math.ceil(current);
+                                setTimeout(updateCounter, 20);
+                            } else {
+                                counter.innerText = target;
+                            }
+                        };
+                        
+                        updateCounter();
+                        observer.unobserve(counter);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            observer.observe(counter);
+        });
+
+        // Before/After Slider
+        const comparisonContainer = document.getElementById('comparison-container');
+        const beforeContainer = document.getElementById('before-container');
+        const afterWrapper = document.getElementById('after-wrapper');
+        const sliderHandle = document.getElementById('slider-handle');
+        
+        let isDragging = false;
+
+        function updateSliderPosition(clientX) {
+            const rect = comparisonContainer.getBoundingClientRect();
+            let x = clientX - rect.left;
+            
+            // Boundary check
+            x = Math.max(0, Math.min(x, rect.width));
+            
+            const percentage = (x / rect.width) * 100;
+            
+            afterWrapper.style.width = `${percentage}%`;
+            sliderHandle.style.left = `${percentage}%`;
+        }
+
+        // Mouse events
+        comparisonContainer.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            updateSliderPosition(e.clientX);
+            e.preventDefault();
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            updateSliderPosition(e.clientX);
+        });
+
+        document.addEventListener('mouseup', () => {
+            isDragging = false;
+        });
+
+        // Touch events for mobile
+        comparisonContainer.addEventListener('touchstart', (e) => {
+            isDragging = true;
+            updateSliderPosition(e.touches[0].clientX);
+        });
+
+        document.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            updateSliderPosition(e.touches[0].clientX);
+        });
+
+        document.addEventListener('touchend', () => {
+            isDragging = false;
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Form submission
+        const contactForm = document.getElementById('contact-form');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simple form validation
+            const requiredFields = contactForm.querySelectorAll('[required]');
+            let isValid = true;
+            
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    isValid = false;
+                    field.classList.add('border-red-500');
+                } else {
+                    field.classList.remove('border-red-500');
+                }
+            });
+            
+            if (isValid) {
+                // In a real implementation, send form data to server
+                alert('Vielen Dank für Ihre Anfrage! Wir werden uns in Kürze bei Ihnen melden.');
+                contactForm.reset();
+            } else {
+                alert('Bitte füllen Sie alle Pflichtfelder aus.');
+            }
+        });
+
+        // Add hover effects to images
+        const images = document.querySelectorAll('img.hover-scale');
+        images.forEach(img => {
+            img.addEventListener('mouseenter', () => {
+                img.style.transition = 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+            });
+        });
+
+        // Animate elements on scroll with GSAP
+        gsap.utils.toArray('.fade-in-up').forEach((element, i) => {
+            gsap.from(element, {
+                scrollTrigger: {
+                    trigger: element,
+                    start: 'top 80%',
+                },
+                y: 50,
+                opacity: 0,
+                duration: 1,
+                delay: i * 0.1,
+                ease: 'power3.out'
+            });
+        });
+
+        // Service cards animation
+        gsap.utils.toArray('.service-card').forEach((card, i) => {
+            gsap.from(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: 'top 85%',
+                },
+                y: 30,
+                opacity: 0,
+                duration: 0.8,
+                delay: i * 0.1,
+                ease: 'power3.out'
+            });
+        });
+
+        // Initialize animations on load
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add loaded class for initial animations
+            document.body.classList.add('loaded');
+        });
+    </script>
+</body>
+</html>
