@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rollin-123.github.io/Kann-Cleaning-in-Hannover/sitemap.xml
