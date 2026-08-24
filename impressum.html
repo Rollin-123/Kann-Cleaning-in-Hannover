@@ -60,6 +60,29 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1A365D',
+                        secondary: '#2D9D78',
+                        accent: '#F6AD55',
+                        light: '#F7FAFC',
+                        dark: '#2D3748'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 <style>
             :root {
@@ -269,6 +292,94 @@
     <a href="https://wa.me/+491792558465" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
     <i class="fab fa-whatsapp"></i>
 </a>
+<!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 py-4 px-6 lg:px-8 bg-white/95 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center shadow-md">
+                    <i class="fas fa-spray-can-sparkles text-white text-lg"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl lg:text-2xl font-serif font-bold text-primary">KAN<span class="text-secondary">-</span>Clean</h1>
+                    <p class="text-xs text-gray-600 tracking-wider hidden sm:block">Premium Gebäudereinigung</p>
+                </div>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden lg:flex items-center space-x-8">
+                <a href="#home" class="text-gray-700 hover:text-primary font-medium transition-colors relative group">
+                    <span>Start</span>
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <a href="#services" class="text-gray-700 hover:text-primary font-medium transition-colors relative group">
+                    <span>Leistungen</span>
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <a href="#about" class="text-gray-700 hover:text-primary font-medium transition-colors relative group">
+                    <span>Über uns</span>
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <a href="#portfolio" class="text-gray-700 hover:text-primary font-medium transition-colors relative group">
+                    <span>Referenzen</span>
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <a href="./impressum.html" class="text-gray-700 hover:text-primary font-medium transition-colors relative group">
+    <span>Impressum</span>
+    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+</a>
+
+                <a href="#contact" class="btn-primary px-6 py-3 rounded-lg font-medium">
+                    <i class="fas fa-phone-alt mr-2"></i> Kontakt
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobileMenuBtn" class="lg:hidden text-2xl text-primary">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="lg:hidden fixed top-0 left-0 w-full h-screen bg-white/95 backdrop-blur-md hidden transition-all duration-300">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-8">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                            <i class="fas fa-spray-can-sparkles text-white"></i>
+                        </div>
+                        <h1 class="text-xl font-bold text-primary">Kann.Cleaning</h1>
+                    </div>
+                    <button id="closeMenuBtn" class="text-2xl text-primary">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <div class="space-y-4">
+                    <a href="#home" class="block text-lg font-medium text-gray-800 hover:text-primary transition-colors py-3 px-4 hover:bg-gray-50 rounded-lg">Start</a>
+                    <a href="#services" class="block text-lg font-medium text-gray-800 hover:text-primary transition-colors py-3 px-4 hover:bg-gray-50 rounded-lg">Leistungen</a>
+                    <a href="#about" class="block text-lg font-medium text-gray-800 hover:text-primary transition-colors py-3 px-4 hover:bg-gray-50 rounded-lg">Über uns</a>
+                    <a href="#portfolio" class="block text-lg font-medium text-gray-800 hover:text-primary transition-colors py-3 px-4 hover:bg-gray-50 rounded-lg">Referenzen</a>
+                    <a href="./impressum.html" class="block text-lg font-medium text-gray-800 hover:text-primary transition-colors py-3 px-4 hover:bg-gray-50 rounded-lg">Impressum</a>
+                    <a href="#contact" class="block mt-4 btn-primary px-6 py-3 rounded-lg text-center">
+                        <i class="fas fa-phone-alt mr-2"></i> Kontakt aufnehmen
+                    </a>
+                </div>
+                
+                <div class="mt-12 pt-8 border-t border-gray-100">
+                    <div class="space-y-4">
+                        <a href="tel:+491792558465" class="flex items-center text-gray-700">
+                            <i class="fas fa-phone text-secondary mr-3"></i>
+                            <span>+491792558465</span>
+                        </a>
+                        <a href="mailto:kemadeuaude@yahoo.fr" class="flex items-center text-gray-700">
+                            <i class="fas fa-envelope text-secondary mr-3"></i>
+                            <span>kemadeuaude@yahoo.fr</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
 
     <section id="legal" class="section-padding bg-white border-t border-gray-100">
     <div style="max-width:800px;margin:0 auto;">
@@ -276,16 +387,16 @@
         
         <h3 style="color:#1A365D;margin-top:1.5rem;margin-bottom:0.5rem;font-size:1.25rem;">Impressum (§5 TMG)</h3>
         <p style="color:#4a5568;margin-bottom:0.5rem;"><strong>Angaben gemäß § 5 TMG</strong></p>
-        <p style="color:#4a5568;margin-bottom:0.5rem;">KAN-Clean<br>Inhaberin: [Nom complet de ta tante]<br>[Rue et numéro]<br>[Code postal] Hannover<br>Deutschland</p>
+        <p style="color:#4a5568;margin-bottom:0.5rem;">KAN-Clean<br>Inhaberin: Aude Nerline Kemadeu<br>Heifeld 1<br>30966 Hemmingen Hannover<br>Deutschland</p>
         
         <h3 style="color:#1A365D;margin-top:1.5rem;margin-bottom:0.5rem;font-size:1.25rem;">Kontakt</h3>
-        <p style="color:#4a5568;margin-bottom:0.5rem;">Telefon: 0152 1680 62 50<br>E-Mail: info@KAN-Clean.de</p>
+        <p style="color:#4a5568;margin-bottom:0.5rem;">Telefon: +491792558465<br>E-Mail: info@KAN-Clean.de</p>
         
         <h3 style="color:#1A365D;margin-top:1.5rem;margin-bottom:0.5rem;font-size:1.25rem;">Umsatzsteuer-ID</h3>
         <p style="color:#4a5568;margin-bottom:0.5rem;">Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG: [Wird im Oktober 2026 registriert]</p>
         
         <h3 style="color:#1A365D;margin-top:1.5rem;margin-bottom:0.5rem;font-size:1.25rem;">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h3>
-        <p style="color:#4a5568;margin-bottom:0.5rem;">[Nom complet de ta tante]<br>[Adresse], Hannover</p>
+        <p style="color:#4a5568;margin-bottom:0.5rem;">Aude Nerline Kemadeu<br>Heifeld 1 30966 Hemmingen, Hannover</p>
         
         <h3 style="color:#1A365D;margin-top:1.5rem;margin-bottom:0.5rem;font-size:1.25rem;">Haftungsausschluss</h3>
         <p style="color:#4a5568;margin-bottom:0.5rem;"><strong>Haftung für Inhalte</strong></p>
@@ -299,7 +410,7 @@
         <p style="color:#4a5568;margin-bottom:0.5rem;">Der Schutz Ihrer persönlichen Daten ist uns wichtig. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der DSGVO und dieser Datenschutzerklärung.</p>
         
         <h3 style="color:#1A365D;margin-top:1.5rem;margin-bottom:0.5rem;font-size:1.25rem;">2. Verantwortliche Stelle</h3>
-        <p style="color:#4a5568;margin-bottom:0.5rem;">KAN-Clean, [Adresse], Hannover. Telefon: 0152 1680 62 50, E-Mail: info@KAN-Clean.de</p>
+        <p style="color:#4a5568;margin-bottom:0.5rem;">KAN-Clean, Heifeld 1 30966 Hemmingen, Hannover. Telefon: +491792558465, E-Mail: info@KAN-Clean.de</p>
         
         <h3 style="color:#1A365D;margin-top:1.5rem;margin-bottom:0.5rem;font-size:1.25rem;">3. Erhebung personenbezogener Daten</h3>
         <p style="color:#4a5568;margin-bottom:0.5rem;">Bei Nutzung des Kontaktformulars erheben wir: Vorname, Nachname, E-Mail, Telefon (optional), gewünschter Service und Ihre Nachricht. Diese Daten werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet und nach Erledigung gelöscht.</p>
@@ -324,6 +435,233 @@
         <p style="color:#4a5568;margin-bottom:0.5rem;">Sie können sich beschweren bei: Landesbeauftragte für den Datenschutz Niedersachsen, Hannover.</p>
     </div>
 </section>
+
+
+<script>
+        // Initialize GSAP
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Mobile Menu Functionality
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const closeMenuBtn = document.getElementById('closeMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        function openMobileMenu() {
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileMenu() {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
+
+        mobileMenuBtn.addEventListener('click', openMobileMenu);
+        closeMenuBtn.addEventListener('click', closeMobileMenu);
+
+        // Close mobile menu when clicking links
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('shadow-lg', 'bg-white');
+            } else {
+                navbar.classList.remove('shadow-lg', 'bg-white');
+            }
+        });
+
+        // Counter Animation
+        const counters = document.querySelectorAll('.counter');
+        counters.forEach(counter => {
+            const target = parseInt(counter.getAttribute('data-target'));
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        let current = 0;
+                        const increment = target / 100;
+                        
+                        const updateCounter = () => {
+                            if (current < target) {
+                                current += increment;
+                                counter.innerText = Math.ceil(current);
+                                setTimeout(updateCounter, 20);
+                            } else {
+                                counter.innerText = target;
+                            }
+                        };
+                        
+                        updateCounter();
+                        observer.unobserve(counter);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            observer.observe(counter);
+        });
+
+        // Before/After Slider
+        const comparisonContainer = document.getElementById('comparison-container');
+        const beforeContainer = document.getElementById('before-container');
+        const afterWrapper = document.getElementById('after-wrapper');
+        const sliderHandle = document.getElementById('slider-handle');
+        
+        let isDragging = false;
+
+        function updateSliderPosition(clientX) {
+            const rect = comparisonContainer.getBoundingClientRect();
+            let x = clientX - rect.left;
+            
+            // Boundary check
+            x = Math.max(0, Math.min(x, rect.width));
+            
+            const percentage = (x / rect.width) * 100;
+            
+            afterWrapper.style.width = `${percentage}%`;
+            sliderHandle.style.left = `${percentage}%`;
+        }
+
+        // Mouse events
+        comparisonContainer.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            updateSliderPosition(e.clientX);
+            e.preventDefault();
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            updateSliderPosition(e.clientX);
+        });
+
+        document.addEventListener('mouseup', () => {
+            isDragging = false;
+        });
+
+        // Touch events for mobile
+        comparisonContainer.addEventListener('touchstart', (e) => {
+            isDragging = true;
+            updateSliderPosition(e.touches[0].clientX);
+        });
+
+        document.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            updateSliderPosition(e.touches[0].clientX);
+        });
+
+        document.addEventListener('touchend', () => {
+            isDragging = false;
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Form submission
+        const contactForm = document.getElementById('contact-form');
+const formStatus = document.getElementById('form-status');
+
+contactForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const formData = new FormData(contactForm);
+    
+    const requiredFields = contactForm.querySelectorAll('[required]');
+    let isValid = true;
+    requiredFields.forEach(field => {
+        if (!field.value.trim()) { isValid = false; field.classList.add('border-red-500'); }
+        else { field.classList.remove('border-red-500'); }
+    });
+
+    if (!isValid) {
+        formStatus.textContent = 'Bitte füllen Sie alle Pflichtfelder aus.';
+        formStatus.className = 'text-center text-sm text-red-500';
+        formStatus.classList.remove('hidden');
+        return;
+    }
+
+    try {
+        const response = await fetch(contactForm.action, {
+            method: 'POST', body: formData, headers: { 'Accept': 'application/json' }
+        });
+        if (response.ok) {
+            formStatus.textContent = 'Vielen Dank! Wir melden uns innerhalb von 24 Stunden bei Ihnen.';
+            formStatus.className = 'text-center text-sm text-green-600';
+            contactForm.reset();
+        } else {
+            formStatus.textContent = 'Ein Fehler ist aufgetreten. Bitte rufen Sie uns an: +491792558465';
+            formStatus.className = 'text-center text-sm text-red-500';
+        }
+    } catch (error) {
+        formStatus.textContent = 'Ein Fehler ist aufgetreten. Bitte rufen Sie uns an: +491792558465';
+        formStatus.className = 'text-center text-sm text-red-500';
+    }
+    formStatus.classList.remove('hidden');
+});
+
+
+        // Add hover effects to images
+        const images = document.querySelectorAll('img.hover-scale');
+        images.forEach(img => {
+            img.addEventListener('mouseenter', () => {
+                img.style.transition = 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+            });
+        });
+
+        // Animate elements on scroll with GSAP
+        gsap.utils.toArray('.fade-in-up').forEach((element, i) => {
+            gsap.from(element, {
+                scrollTrigger: {
+                    trigger: element,
+                    start: 'top 80%',
+                },
+                y: 50,
+                opacity: 0,
+                duration: 1,
+                delay: i * 0.1,
+                ease: 'power3.out'
+            });
+        });
+
+        // Service cards animation
+        gsap.utils.toArray('.service-card').forEach((card, i) => {
+            gsap.from(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: 'top 85%',
+                },
+                y: 30,
+                opacity: 0,
+                duration: 0.8,
+                delay: i * 0.1,
+                ease: 'power3.out'
+            });
+        });
+
+        // Initialize animations on load
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add loaded class for initial animations
+            document.body.classList.add('loaded');
+        });
+    </script>
 
 </body>
 </html>
